@@ -1,0 +1,236 @@
+{
+    "env": {
+        "additional_params": {
+            "discrete": false,
+            "num_observed": 2,
+            "switch_time": 2,
+            "target_velocity": 50,
+            "tl_type": "actuated"
+        },
+        "evaluate": false,
+        "horizon": 400,
+        "sims_per_step": 1,
+        "sort_vehicles": false,
+        "starting_position_shuffle": false,
+        "vehicle_arrangement_shuffle": false,
+        "warmup_steps": 0
+    },
+    "env_name": "PO_TrafficLightGridEnv",
+    "exp_tag": "grid_0",
+    "initial": {
+        "additional_params": {},
+        "bunching": 0,
+        "edges_distribution": "all",
+        "lanes_distribution": Infinity,
+        "min_gap": 0,
+        "perturbation": 0.0,
+        "shuffle": true,
+        "spacing": "uniform",
+        "x0": 0
+    },
+    "net": {
+        "additional_params": {
+            "grid_array": {
+                "cars_bot": 1,
+                "cars_left": 1,
+                "cars_right": 1,
+                "cars_top": 1,
+                "col_num": 3,
+                "inner_length": 300,
+                "long_length": 100,
+                "row_num": 3,
+                "short_length": 300
+            },
+            "horizontal_lanes": 1,
+            "speed_limit": 35,
+            "vertical_lanes": 1
+        },
+        "inflows": {
+            "_InFlows__flows": [
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_0",
+                    "route": "routeleft3_0",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_1",
+                    "route": "routeleft3_1",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_2",
+                    "route": "routeleft3_2",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_3",
+                    "route": "routeright0_0",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_4",
+                    "route": "routeright0_1",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_5",
+                    "route": "routeright0_2",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_6",
+                    "route": "routebot0_0",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_7",
+                    "route": "routebot1_0",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_8",
+                    "route": "routebot2_0",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_9",
+                    "route": "routetop0_3",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_10",
+                    "route": "routetop1_3",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": "max",
+                    "end": 2000000.0,
+                    "name": "flow_11",
+                    "route": "routetop2_3",
+                    "vehsPerHour": 300,
+                    "vtype": "human"
+                }
+            ],
+            "num_flows": 12
+        },
+        "netfile": null,
+        "no_internal_links": false,
+        "osm_path": null
+    },
+    "scenario": "SimpleGridScenario",
+    "sumo": {
+        "ballistic": false,
+        "emission_path": null,
+        "lateral_resolution": null,
+        "no_step_log": true,
+        "overtake_right": false,
+        "port": null,
+        "print_warnings": true,
+        "render": false,
+        "restart_instance": true,
+        "seed": null,
+        "sim_step": 1,
+        "teleport_time": -1
+    },
+    "veh": [
+        {
+            "acceleration_controller": [
+                "SumoCarFollowingController",
+                {}
+            ],
+            "initial_speed": 0,
+            "lane_change_controller": [
+                "SumoLaneChangeController",
+                {}
+            ],
+            "lane_change_mode": 512,
+            "num_vehicles": 12,
+            "routing_controller": [
+                "GridRouter",
+                {}
+            ],
+            "speed_mode": 25,
+            "sumo_car_following_params": {
+                "controller_params": {
+                    "accel": 1.0,
+                    "carFollowModel": "IDM",
+                    "decel": 1.5,
+                    "impatience": 0.5,
+                    "maxSpeed": 30,
+                    "minGap": 2.5,
+                    "sigma": 0.5,
+                    "speedDev": 0.1,
+                    "speedFactor": 1.0,
+                    "tau": 1.0
+                }
+            },
+            "sumo_lc_params": {
+                "controller_params": {
+                    "laneChangeModel": "LC2013",
+                    "lcCooperative": "1.0",
+                    "lcKeepRight": "1.0",
+                    "lcSpeedGain": "1.0",
+                    "lcStrategic": "1.0"
+                }
+            },
+            "veh_id": "human"
+        }
+    ]
+}

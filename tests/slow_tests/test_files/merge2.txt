@@ -1,0 +1,173 @@
+{
+    "env": {
+        "additional_params": {
+            "max_accel": 1.5,
+            "max_decel": 1.5,
+            "num_rl": 17,
+            "target_velocity": 20
+        },
+        "evaluate": false,
+        "horizon": 750,
+        "sims_per_step": 2,
+        "sort_vehicles": false,
+        "starting_position_shuffle": false,
+        "vehicle_arrangement_shuffle": false,
+        "warmup_steps": 0
+    },
+    "env_name": "WaveAttenuationMergePOEnv",
+    "exp_tag": "merge_2",
+    "initial": {
+        "additional_params": {},
+        "bunching": 0,
+        "edges_distribution": "all",
+        "lanes_distribution": Infinity,
+        "min_gap": 0,
+        "perturbation": 0.0,
+        "shuffle": false,
+        "spacing": "uniform",
+        "x0": 0
+    },
+    "net": {
+        "additional_params": {
+            "highway_lanes": 1,
+            "merge_lanes": 1,
+            "merge_length": 100,
+            "post_merge_length": 100,
+            "pre_merge_length": 500,
+            "speed_limit": 30
+        },
+        "inflows": {
+            "_InFlows__flows": [
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": 10,
+                    "end": 2000000.0,
+                    "name": "flow_0",
+                    "route": "routeinflow_highway",
+                    "vehsPerHour": 1334.0,
+                    "vtype": "human"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": 10,
+                    "end": 2000000.0,
+                    "name": "flow_1",
+                    "route": "routeinflow_highway",
+                    "vehsPerHour": 666.0,
+                    "vtype": "rl"
+                },
+                {
+                    "begin": 1,
+                    "departLane": "free",
+                    "departSpeed": 7.5,
+                    "end": 2000000.0,
+                    "name": "flow_2",
+                    "route": "routeinflow_merge",
+                    "vehsPerHour": 100,
+                    "vtype": "human"
+                }
+            ],
+            "num_flows": 3
+        },
+        "netfile": null,
+        "no_internal_links": false,
+        "osm_path": null
+    },
+    "scenario": "MergeScenario",
+    "sumo": {
+        "ballistic": false,
+        "emission_path": null,
+        "lateral_resolution": null,
+        "no_step_log": true,
+        "overtake_right": false,
+        "port": null,
+        "print_warnings": true,
+        "render": false,
+        "restart_instance": true,
+        "seed": null,
+        "sim_step": 0.5,
+        "teleport_time": -1
+    },
+    "veh": [
+        {
+            "acceleration_controller": [
+                "SumoCarFollowingController",
+                {}
+            ],
+            "initial_speed": 0,
+            "lane_change_controller": [
+                "SumoLaneChangeController",
+                {}
+            ],
+            "lane_change_mode": 512,
+            "num_vehicles": 5,
+            "routing_controller": null,
+            "speed_mode": 1,
+            "sumo_car_following_params": {
+                "controller_params": {
+                    "accel": 1.0,
+                    "carFollowModel": "IDM",
+                    "decel": 1.5,
+                    "impatience": 0.5,
+                    "maxSpeed": 30,
+                    "minGap": 2.5,
+                    "sigma": 0.5,
+                    "speedDev": 0.1,
+                    "speedFactor": 1.0,
+                    "tau": 1.0
+                }
+            },
+            "sumo_lc_params": {
+                "controller_params": {
+                    "laneChangeModel": "LC2013",
+                    "lcCooperative": "1.0",
+                    "lcKeepRight": "1.0",
+                    "lcSpeedGain": "1.0",
+                    "lcStrategic": "1.0"
+                }
+            },
+            "veh_id": "human"
+        },
+        {
+            "acceleration_controller": [
+                "RLController",
+                {}
+            ],
+            "initial_speed": 0,
+            "lane_change_controller": [
+                "SumoLaneChangeController",
+                {}
+            ],
+            "lane_change_mode": 512,
+            "num_vehicles": 0,
+            "routing_controller": null,
+            "speed_mode": 1,
+            "sumo_car_following_params": {
+                "controller_params": {
+                    "accel": 1.0,
+                    "carFollowModel": "IDM",
+                    "decel": 1.5,
+                    "impatience": 0.5,
+                    "maxSpeed": 30,
+                    "minGap": 2.5,
+                    "sigma": 0.5,
+                    "speedDev": 0.1,
+                    "speedFactor": 1.0,
+                    "tau": 1.0
+                }
+            },
+            "sumo_lc_params": {
+                "controller_params": {
+                    "laneChangeModel": "LC2013",
+                    "lcCooperative": "1.0",
+                    "lcKeepRight": "1.0",
+                    "lcSpeedGain": "1.0",
+                    "lcStrategic": "1.0"
+                }
+            },
+            "veh_id": "rl"
+        }
+    ]
+}

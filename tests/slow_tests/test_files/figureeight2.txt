@@ -1,0 +1,103 @@
+{
+    "env": {
+        "additional_params": {
+            "max_accel": 3,
+            "max_decel": 3,
+            "target_velocity": 20
+        },
+        "evaluate": false,
+        "horizon": 1500,
+        "sims_per_step": 1,
+        "sort_vehicles": false,
+        "starting_position_shuffle": false,
+        "vehicle_arrangement_shuffle": false,
+        "warmup_steps": 0
+    },
+    "env_name": "AccelEnv",
+    "exp_tag": "figure_eight_2",
+    "initial": {
+        "additional_params": {},
+        "bunching": 0,
+        "edges_distribution": "all",
+        "lanes_distribution": Infinity,
+        "min_gap": 0,
+        "perturbation": 0.0,
+        "shuffle": false,
+        "spacing": "uniform",
+        "x0": 0
+    },
+    "net": {
+        "additional_params": {
+            "lanes": 1,
+            "radius_ring": 30,
+            "resolution": 40,
+            "speed_limit": 30
+        },
+        "inflows": {
+            "_InFlows__flows": [],
+            "num_flows": 0
+        },
+        "netfile": null,
+        "no_internal_links": false,
+        "osm_path": null
+    },
+    "scenario": "Figure8Scenario",
+    "sumo": {
+        "ballistic": false,
+        "emission_path": null,
+        "lateral_resolution": null,
+        "no_step_log": true,
+        "overtake_right": false,
+        "port": null,
+        "print_warnings": true,
+        "render": false,
+        "restart_instance": false,
+        "seed": null,
+        "sim_step": 0.1,
+        "teleport_time": -1
+    },
+    "veh": [
+        {
+            "acceleration_controller": [
+                "RLController",
+                {}
+            ],
+            "initial_speed": 0,
+            "lane_change_controller": [
+                "SumoLaneChangeController",
+                {}
+            ],
+            "lane_change_mode": 512,
+            "num_vehicles": 14,
+            "routing_controller": [
+                "ContinuousRouter",
+                {}
+            ],
+            "speed_mode": 1,
+            "sumo_car_following_params": {
+                "controller_params": {
+                    "accel": 1.0,
+                    "carFollowModel": "IDM",
+                    "decel": 1.5,
+                    "impatience": 0.5,
+                    "maxSpeed": 30,
+                    "minGap": 2.5,
+                    "sigma": 0.5,
+                    "speedDev": 0.1,
+                    "speedFactor": 1.0,
+                    "tau": 1.0
+                }
+            },
+            "sumo_lc_params": {
+                "controller_params": {
+                    "laneChangeModel": "LC2013",
+                    "lcCooperative": "1.0",
+                    "lcKeepRight": "1.0",
+                    "lcSpeedGain": "1.0",
+                    "lcStrategic": "1.0"
+                }
+            },
+            "veh_id": "rl"
+        }
+    ]
+}
