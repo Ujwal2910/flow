@@ -66,6 +66,25 @@ def get_flow_params(config):
     # collect all data from the json file
     flow_params = json.loads(config['env_config']['flow_params'])
 
+    # parse the dictionary elements into flow-param objects (e.g. EnvParams)
+    return parse_flow_params(flow_params)
+
+
+def parse_flow_params(flow_params):
+    """Parse the dictionary elements into flow-param objects (e.g. EnvParams).
+
+    Parameters
+    ----------
+    flow_params : dict
+        raw (un-parsed) flow_params object, where elements such as EnvParams
+        are represented as dictionaries, and not their relevant objects
+
+    Returns
+    -------
+    dict
+        Dict of flow parameters, like net_params, env_params, vehicle
+        characteristics, etc
+    """
     # reinitialize the vehicles class from stored data
     veh = Vehicles()
     for veh_params in flow_params["veh"]:
