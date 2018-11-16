@@ -49,7 +49,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/bottleneck0.py
         """
-        params_dict = json.loads(open("test_files/bottleneck0.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/bottleneck0.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -78,7 +80,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/bottleneck1.py
         """
-        params_dict = json.loads(open("test_files/bottleneck1.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/bottleneck1.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -107,7 +111,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/bottleneck2.py
         """
-        params_dict = json.loads(open("test_files/bottleneck2.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/bottleneck2.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -138,7 +144,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/figureeight0.py
         """
-        params_dict = json.loads(open("test_files/figureeight0.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/figureeight0.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -167,7 +175,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/figureeight1.py
         """
-        params_dict = json.loads(open("test_files/figureeight1.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/figureeight1.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -196,7 +206,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/figureeight2.py
         """
-        params_dict = json.loads(open("test_files/figureeight2.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/figureeight2.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -225,7 +237,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/grid0.py
         """
-        params_dict = json.loads(open("test_files/grid0.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/grid0.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -254,7 +268,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/grid1.py
         """
-        params_dict = json.loads(open("test_files/grid1.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/grid1.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -283,7 +299,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/merge0.py
         """
-        params_dict = json.loads(open("test_files/merge0.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/merge0.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -312,7 +330,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/merge1.py
         """
-        params_dict = json.loads(open("test_files/merge1.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/merge1.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
@@ -341,7 +361,9 @@ class TestBenchmarkEnvironments(unittest.TestCase):
         """
         Tests flow/benchmarks/merge2.py
         """
-        params_dict = json.loads(open("test_files/merge2.txt").read())
+        cur = os.path.dirname(os.path.abspath(__file__))
+        with open(cur + "/test_files/merge2.txt", "rb") as f:
+            params_dict = json.load(f)
         previous_params = parse_flow_params(params_dict)
 
         # test that this inflows are correct
