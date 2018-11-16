@@ -5,7 +5,6 @@ Baseline is no AVs.
 
 from flow.core.params import SumoParams, EnvParams, InitialConfig, NetParams, \
     InFlows
-from flow.core.traffic_lights import TrafficLights
 from flow.core.vehicles import Vehicles
 from flow.controllers import ContinuousRouter
 from flow.envs.bottleneck_env import DesiredVelocityEnv
@@ -18,8 +17,6 @@ HORIZON = 1000
 
 SCALING = 1
 NUM_LANES = 4 * SCALING  # number of lanes in the widest highway
-DISABLE_TB = True
-DISABLE_RAMP_METER = True
 AV_FRAC = 0.10
 
 
@@ -73,12 +70,6 @@ def bottleneck0_baseline(num_runs, render=True):
                vehs_per_hour=flow_rate,
                departLane="random", departSpeed=10)
 
-    traffic_lights = TrafficLights()
-    if not DISABLE_TB:
-        traffic_lights.add(node_id="2")
-    if not DISABLE_RAMP_METER:
-        traffic_lights.add(node_id="3")
-
     additional_net_params = {"scaling": SCALING}
     net_params = NetParams(inflows=inflow,
                            no_internal_links=False,
@@ -109,8 +100,7 @@ def bottleneck0_baseline(num_runs, render=True):
     scenario = BottleneckScenario(name="bay_bridge_toll",
                                   vehicles=vehicles,
                                   net_params=net_params,
-                                  initial_config=initial_config,
-                                  traffic_lights=traffic_lights)
+                                  initial_config=initial_config)
 
     env = DesiredVelocityEnv(env_params, sumo_params, scenario)
 
