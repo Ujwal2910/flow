@@ -330,9 +330,6 @@ class BottleneckEnv(Env):
         else:
             return -1
 
-    def get_bottleneck_outflow_vehicles_per_hour(self, sample_period):
-        return self.vehicles.get_outflow_rate(sample_period)
-
     def get_bottleneck_density(self, lanes=None):
         BOTTLE_NECK_LEN = 280
         bottleneck_ids = self.vehicles.get_ids_by_edge(['3', '4'])
